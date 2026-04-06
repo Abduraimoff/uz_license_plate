@@ -870,16 +870,18 @@ class UzLicensePlate extends StatelessWidget {
     _PlateMetrics m,
     PlateTextScale scaleKind,
   ) {
-    final double fs =
-        scaleKind == PlateTextScale.region ? m.regionFontSize : m.mainFontSize;
+    final double fs = scaleKind == PlateTextScale.region
+        ? m.regionFontSize
+        : m.mainFontSize;
     final Color fg = textColor ?? format.textColor;
     return TextStyle(
+      package: 'uz_license_plate',
       fontFamily: _fontFamily,
       fontSize: fs,
       fontWeight: FontWeight.w500,
       color: fg,
       letterSpacing: -0.27 * (fs / 14),
-      height: 1.2,
+      height: Platform.isAndroid ? -0.5 : 1.2,
     );
   }
 
@@ -974,15 +976,18 @@ class UzLicensePlate extends StatelessWidget {
             );
             break;
           case PlatePartKind.mainGroup:
-            final style = _textStyle(format, m, part.scale).copyWith(
-              color: textColor ?? format.textColor,
-            );
+            final style = _textStyle(
+              format,
+              m,
+              part.scale,
+            ).copyWith(color: textColor ?? format.textColor);
             final widget = PlateText(
               text: part.text ?? '',
               style: style,
               textAlign: TextAlign.center,
             );
-            final bool truckTaxiMain = data.category == UzPlateCategory.taxi ||
+            final bool truckTaxiMain =
+                data.category == UzPlateCategory.taxi ||
                 data.category == UzPlateCategory.truckBus;
             final double truckTaxiRight = truckTaxiMain && part.flex != null
                 ? (size == UzPlateSize.large ? 26.0 : 12.0)
@@ -1058,8 +1063,9 @@ class UzLicensePlate extends StatelessWidget {
         return SizedBox(
           height: innerContentH,
           child: Row(
-            mainAxisSize:
-                effectiveWidth != null ? MainAxisSize.max : MainAxisSize.min,
+            mainAxisSize: effectiveWidth != null
+                ? MainAxisSize.max
+                : MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: buildRowChildren(c.maxWidth),
           ),
@@ -1136,10 +1142,7 @@ class UzLicensePlate extends StatelessWidget {
         borderRadius: BorderRadius.circular(r),
         border: Border.all(color: borderColor, width: 1),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(r),
-        child: child,
-      ),
+      child: ClipRRect(borderRadius: BorderRadius.circular(r), child: child),
     );
   }
 

@@ -4,6 +4,7 @@
 // Figma: Mobile-App 18533:89042 — no side dots; outer radii 5/3 (large/small), inner
 // stroke #282828; vertical divider full row height; region column ~19.4% width.
 
+import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:auto_size_text/auto_size_text.dart';
