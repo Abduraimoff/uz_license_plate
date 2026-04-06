@@ -1,0 +1,35 @@
+name: uz_license_plate
+description: >-
+  Uzbekistan license plate widget — config-driven layouts and parsing aligned
+  with common plate number patterns.
+version: 0.1.0
+homepage: https://github.com/your-org/uz_license_plate
+
+environment:
+  sdk: ^3.10.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  auto_size_text: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.2.4
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/images/plate_uz_flag_figma.svg
+    - assets/images/plate_uz_text_figma.svg
+  fonts:
+    - family: FE Schrift
+      fonts:
+        - asset: assets/fonts/FE-FONT.TTF
+          weight: 500
+    - family: FE Schrift3
+      fonts:
+        - asset: assets/fonts/EuroPlate.ttf
+          weight: 500
