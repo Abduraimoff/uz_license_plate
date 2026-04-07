@@ -47,7 +47,7 @@ class _DemoHomePage extends StatefulWidget {
 
 class _DemoHomePageState extends State<_DemoHomePage> {
   final TextEditingController _controller = TextEditingController(
-    text: '01A123456',
+    text: '01A123AA',
   );
   UzPlateSize _size = UzPlateSize.large;
   bool _showFlag = true;
@@ -70,7 +70,7 @@ class _DemoHomePageState extends State<_DemoHomePage> {
             decoration: const InputDecoration(
               labelText: 'Plate number',
               border: OutlineInputBorder(),
-              hintText: 'e.g. 01A123456',
+              hintText: 'e.g. 01A123AA',
             ),
             textCapitalization: TextCapitalization.characters,
             onSubmitted: (_) => setState(() {}),

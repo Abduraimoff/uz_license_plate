@@ -881,7 +881,7 @@ class UzLicensePlate extends StatelessWidget {
       fontWeight: FontWeight.w500,
       color: fg,
       letterSpacing: -0.27 * (fs / 14),
-      height: Platform.isAndroid ? -0.5 : 1.2,
+      height: 1.2,
     );
   }
 
